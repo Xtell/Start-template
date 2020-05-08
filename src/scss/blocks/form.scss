@@ -1,0 +1,47 @@
+.form__field {
+    margin: 0;
+    margin-bottom: 15px;
+}
+.form__field-text {
+    display: block;
+    margin-bottom: 10px;
+}
+.form__field-input {
+    width: 100%;
+    padding: 10px;
+}
+.form__field--checkbox {
+    position: relative;
+    padding-left: 30px;
+}
+.form__checkbox {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: none;
+        margin-left: -5px;
+        margin-top: -1px;
+        width: 10px;
+        height: 2px;
+        background-color: #000000;
+    }
+    &::before {
+        transform: rotate(45deg);
+    }
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+input[type="checkbox"]:checked + .form__checkbox::before,
+input[type="checkbox"]:checked + .form__checkbox::after {
+    display: block;
+}

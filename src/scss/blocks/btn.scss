@@ -1,0 +1,41 @@
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    user-select: none;
+    padding: 10px 15px;
+    border: 0;
+    background-color: $accent-color;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s background-color;
+    &:not(.btn--disabled):hover {
+        background-color: darken($accent-color, 5%);
+    }
+    &:not(.btn--disabled):focus {
+        background-color: darken($accent-color, 5%);
+        outline: none;
+    }
+    &:not(.btn--disabled):active {
+        background-color: darken($accent-color, 10%);
+    }
+
+}
+
+
+.btn:disabled,
+.btn--disabled {
+    cursor: default;
+    opacity: 0.6;
+    
+}
+
+.btn--large {
+    padding: 15px 40px;
+}
+.btn--full-width {
+    width: 100%;
+}
+

@@ -1,0 +1,81 @@
+// Libs
+@import '../../node_modules/normalize.css/normalize';
+// Mixins
+@import 'mixins';
+
+// Breakpoints
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// Fonts
+@include font('Roboto', normal, 400, '../fonts/roboto-regular');
+@include font('Roboto', normal, 700, '../fonts/roboto-bold');
+
+// Variables
+$accent-color: tomato;
+$roboto: "Roboto", "Arial", sans-serif;
+// General styles
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.lock {
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    min-width: 320px;
+    font-family: $roboto;
+    font-size: 16px;
+    line-height: normal;
+    color: #000000;
+
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@include media-breakpoint-up($sm) {
+    .container {
+        max-width: 540px;
+    }
+}
+@include media-breakpoint-up($md)  {
+    .container {
+        max-width: 720px;
+    }
+}
+@include media-breakpoint-up($lg)  {
+    .container {
+        max-width: 960px;
+    }
+}
+@include media-breakpoint-up($xl)  {
+    .container {
+        max-width: 1140px;
+    }
+}

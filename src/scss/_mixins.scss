@@ -1,0 +1,24 @@
+@mixin font($font-name, $font-style, $font-weight, $url) {
+    @font-face {
+        font-family: $font-name;
+        font-style: $font-style;
+        font-weight: $font-weight;
+        src: url($url + '.woff2') format('woff2'),
+             url($url + '.woff') format('woff');
+    } 
+}
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+@mixin media-breakpoint-up($breakpoint) {
+    @media(min-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin media-breakpoint-down($breakpoint) {
+    @media(max-width: $breakpoint - 0.02px) {
+        @content;
+    }
+}
